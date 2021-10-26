@@ -50,37 +50,13 @@ public class PlayerMovement : MonoBehaviour
         {
             Quaternion newRotation = Quaternion.Euler(velocityRight*Time.fixedDeltaTime);
             playerRigidbody.MoveRotation(playerRigidbody.rotation*newRotation);
-            
-            //transform.Rotate(0, rotationSpeed, 0, Space.Self);
         }
         else if (h < 0)
         {
             Quaternion newRotation = Quaternion.Euler(velocityLeft * Time.fixedDeltaTime);
             playerRigidbody.MoveRotation(playerRigidbody.rotation * newRotation);
-
-            //transform.Rotate(0, -rotationSpeed, 0, Space.Self);
         }
     }
-
-    //void Turning()
-    //{
-    //    // Create a ray from the player position to 
-    //    Ray camRay = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-    //    // Perform the raycast and if it hits something on the floor layer...
-    //    if (Physics.Raycast(camRay, out floorHit, camRayLength, floorMask))
-    //    {
-    //        // Create a vector from the player to the point on the floor the raycast from the mouse hit.
-    //        Vector3 playerToMouse = floorHit.point - transform.position;
-    //        // Ensure the vector is entirely along the floor plane.
-    //        playerToMouse.y = 0f;
-
-    //        // Create a quaternion (rotation) based on looking down the vector from the player to the mouse.
-    //        Quaternion newRotation = Quaternion.LookRotation(playerToMouse);
-    //        // Set the player's rotation to this new rotation.
-    //        playerRigidbody.MoveRotation(newRotation);
-    //    }
-    //}
 
     void Animating(float h, float v)
     {
