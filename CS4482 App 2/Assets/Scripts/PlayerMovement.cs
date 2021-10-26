@@ -29,10 +29,14 @@ public class PlayerMovement : MonoBehaviour
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
 
-        // Move the player around the scene.
-        Move(h, v);
-        // Animate the player.
-        Animating(h, v);
+        //dont let the player move if they are inputing text
+        if (!VictoryManager.getInput)
+        {
+            // Move the player around the scene.
+            Move(h, v);
+            // Animate the player.
+            Animating(h, v);
+        }
     }
 
     void Move(float h, float v)

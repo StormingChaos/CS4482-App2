@@ -6,7 +6,7 @@ using TMPro;
 
 public class Timer : MonoBehaviour
 {
-    TextMeshProUGUI text;                          //reference to text component
+    TextMeshProUGUI text;               //reference to text component
     public static float timer = 0f;     //time elapsed
 
     // Start is called before the first frame update
@@ -20,7 +20,7 @@ public class Timer : MonoBehaviour
     void Update()
     {
         //if the player has not finished the maze
-        if (!EndGame.complete)
+        if (!CompleteMaze.victory)
         {
             //calculate time elapsed
             timer += Time.deltaTime;
