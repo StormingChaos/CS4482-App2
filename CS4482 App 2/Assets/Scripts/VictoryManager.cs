@@ -22,7 +22,7 @@ public class VictoryManager : MonoBehaviour
     {
         if (CompleteMaze.victory)
         {
-            anim.SetTrigger("GameOver");
+            //anim.SetTrigger("GameOver");
             victoryScreen.gameObject.SetActive(true);
 
             if (PauseMenu.GamePaused)
