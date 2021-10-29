@@ -44,6 +44,7 @@ public class PauseMenu : MonoBehaviour
     public void RestartGame()
     {
         Resume();
+        CompleteMaze.victory = false;
         SceneManager.LoadScene("Level01");
     }
 

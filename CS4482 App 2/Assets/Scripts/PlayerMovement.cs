@@ -32,41 +32,53 @@ public class PlayerMovement : MonoBehaviour
         //dont let the player move if they are inputing text
         if (!VictoryManager.getInput)
         {
-            // Move the player around the scene.
-            Move(h, v);
-            // Animate the player.
-            Animating(h, v);
+            // Move the player around the scene and Animate the player.
+            Animating(Move(h, v));
         }
     }
 
-    void Move(float h, float v)
+    bool Move(float h, float v)
     {
-        if (v > 0)
+        bool IsMoving = false;
+
+        if (v > 0f)
         {
             playerRigidbody.MovePosition(transform.position + transform.forward * Time.deltaTime * movementSpeed);
+            IsMoving = true;
         }
-        else if (v < 0)
+        else if (v < 0f)
         {
             playerRigidbody.MovePosition(transform.position - transform.forward * Time.deltaTime * movementSpeed);
+            IsMoving = true;
+        }
+        else
+        {
+            playerRigidbody.MovePosition(transform.position);
         }
 
-        if (h > 0)
+        if (h > 0f)
         {
             Quaternion newRotation = Quaternion.Euler(velocityRight*Time.fixedDeltaTime);
             playerRigidbody.MoveRotation(playerRigidbody.rotation*newRotation);
+            IsMoving = true;
         }
-        else if (h < 0)
+        else if (h < 0f)
         {
             Quaternion newRotation = Quaternion.Euler(velocityLeft * Time.fixedDeltaTime);
             playerRigidbody.MoveRotation(playerRigidbody.rotation * newRotation);
+            IsMoving = true;
         }
+        else
+        {
+            playerRigidbody.MoveRotation(playerRigidbody.rotation);
+        }
+
+        return IsMoving;
     }
 
-    void Animating(float h, float v)
+    void Animating(bool isMoving)
     {
-        // Create a boolean that is true if either of the input axes is non-zero.
-        bool walking = h != 0f || v != 0f;
-        // Tell the animator whether or not the player is walking.
-        anim.SetBool("IsWalking", walking);
+        // If either of the input axes is non-zero, & tell the animator whether or not the player is walking.
+        anim.SetBool("IsWalking", isMoving);
     }
 }
