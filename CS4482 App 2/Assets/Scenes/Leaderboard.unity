@@ -5408,7 +5408,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1. Name ............................................ Time
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: f2dcf029949142e28b974630369c8b4e, type: 2}
@@ -7078,6 +7078,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9be54fd76978f4748bd184bf77950d5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textBox: {fileID: 1162689131}
 --- !u!1 &1662426089 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 181598, guid: 9128fac7ecb9c4b4085275bbf85879ee, type: 3}

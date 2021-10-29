@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class VictoryManager : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class VictoryManager : MonoBehaviour
     GameObject player;
     public static bool getInput = false;
     public GameObject victoryScreen;
+    public TextMeshProUGUI textEntry;
 
     // Start is called before the first frame update
     void Awake()
@@ -48,6 +50,10 @@ public class VictoryManager : MonoBehaviour
 
     public void SubmitScore()
     {
+        Leaderboard.AddEntry(textEntry.text, Timer.timer);
+        Leaderboard.Save();
         Debug.Log("Submitting Score...");
+        SceneManager.LoadScene("Leaderboard");
+        
     }
 }

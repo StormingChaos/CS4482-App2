@@ -48,6 +48,20 @@ public class PauseMenu : MonoBehaviour
         SceneManager.LoadScene("Level01");
     }
 
+    public void Leaderboard()
+    {
+        Resume();
+        CompleteMaze.victory = false;
+        SceneManager.LoadScene("Leaderboard");
+    }
+
+    public void MainMenu()
+    {
+        Resume();
+        CompleteMaze.victory = false;
+        SceneManager.LoadScene("MainMenu");
+    }
+
     public void QuitGame()
     {
         Debug.Log("Quitting game...");
