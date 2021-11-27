@@ -53,6 +53,7 @@ public class VictoryManager : MonoBehaviour
         Leaderboard.AddEntry(textEntry.text, Timer.timer);
         Leaderboard.Save();
         Debug.Log("Submitting Score...");
+        CompleteMaze.victory = false;
         SceneManager.LoadScene("Leaderboard");
         
     }

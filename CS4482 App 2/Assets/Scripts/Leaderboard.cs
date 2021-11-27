@@ -57,6 +57,7 @@ public class Leaderboard : MonoBehaviour
     }
     public static void AddEntry(string name, float time)
     {
+        //space is an allowed character
         scores.Add(new KeyValuePair<string, float>(name, time));
         Sort();
     }
